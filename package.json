@@ -1,0 +1,23 @@
+{
+  "name": "talk-a-tive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Narayan2208/ChatOn.git"
+  },
+  "author": "Narayan Dutta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Narayan2208/ChatOn/issues"
+  },
+  "homepage": "https://github.com/Narayan2208/ChatOn#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.0.4"
+  }
+}
