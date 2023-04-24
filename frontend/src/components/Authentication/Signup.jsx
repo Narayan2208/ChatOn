@@ -50,17 +50,8 @@ const Signup = () => {
           "Content-type": "application/json",
         },
       };
-      const { data } = await axios.post(
-        "/api/user",
-        {
-          name,
-          email,
-          password,
-          pic,
-        },
-        config
-      );
-      console.log(data);
+      const { data } = await axios.post("/api/user",{name,email,password,pic},config);
+      console.log(data, "hidata");
       toast({
         title: "Registration Successful",
         status: "success",
@@ -100,9 +91,9 @@ const Signup = () => {
     if (pics.type === "image/jpeg" || pics.type === "image/png") {
       const data = new FormData();
       data.append("file", pics);
-      data.append("upload_preset", "chat-app");
-      data.append("cloud_name", "piyushproj");
-      fetch("https://api.cloudinary.com/v1_1/piyushproj/image/upload", {
+      data.append("upload_preset", "chat-On");
+      data.append("cloud_name", "dfgqwy9io");
+      fetch("https://api.cloudinary.com/v1_1/dfgqwy9io/image/upload", {
         method: "post",
         body: data,
       })
