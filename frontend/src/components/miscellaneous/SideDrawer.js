@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Avatar, Box, Button,Menu,MenuButton,MenuList,Text , Tooltip } from '@chakra-ui/react'
+import { Avatar, Box, Button,Menu,MenuButton,MenuDivider,MenuItem,MenuList,Text , Tooltip } from '@chakra-ui/react'
 import { BellIcon, ChevronDownIcon } from '@chakra-ui/icons'
 import { ChatState } from '../../Context/ChatProvider';
+import ProfileModal from './ProfileModal';
 
 
 function SideDrawer() {
@@ -43,7 +44,14 @@ function SideDrawer() {
           <Menu>
           <MenuButton as={Button} rightIcon={<ChevronDownIcon/>}>
           <Avatar size='sm' cursor={"pointer"} name={user.name} src={user.pic}/>
-            </MenuButton>
+          </MenuButton>
+          <MenuList>
+          <ProfileModal user={user}>
+            <MenuItem>My Profile</MenuItem>
+          </ProfileModal>
+            <MenuDivider/>
+            <MenuItem>Logout</MenuItem>
+          </MenuList>
           </Menu>
         </div>
       </Box>
