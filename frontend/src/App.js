@@ -2,14 +2,14 @@
 import './App.css';
 import {Route, Routes} from 'react-router-dom'
 import Homepage from './Pages/Homepage';
-import ChatPage from './Pages/ChatPage';
+import Chatpage from './Pages/Chatpage';
 function App() {
   return (
     <>
   <div className='App'>
   <Routes>
 <Route path="/" Component={Homepage}/>
-<Route path="/chats" Component={ChatPage}/>
+<Route path="/chats" Component={Chatpage}/>
   </Routes>
   </div>
     </>
