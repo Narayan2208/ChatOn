@@ -130,7 +130,7 @@ const accessChat = (userId)=>{
            <ChatLoading/>
           ) : (
             searchResult?.map((user)=>{
-              <UserListItem key={user._id} user={user} handleFunction={()=>accessChat(user._id)}/>
+           return   <UserListItem key={user._id} user={user} handleFunction={()=>accessChat(user._id)}/>
             })
           )}
         </DrawerBody>
