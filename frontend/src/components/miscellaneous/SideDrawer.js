@@ -15,7 +15,15 @@ function SideDrawer() {
   const [loadingChat, setLoadingChat] = useState()
   const { isOpen, onOpen, onClose } = useDisclosure();
   let navigate = useNavigate()
-  const {user} = ChatState();
+
+  const {
+    setSelectedChat,
+    user,
+    notification,
+    setNotification,
+    chats,
+    setChats,
+  } = ChatState();
 
   const toast = useToast();
 
@@ -60,9 +68,34 @@ function SideDrawer() {
       }
 }
 
-const accessChat = (userId)=>{
+const accessChat = async (userId) => {
+  console.log(userId);
 
-}
+  try {
+    setLoadingChat(true);
+    const config = {
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+    };
+    const { data } = await axios.post(`/api/chat`, { userId }, config);
+
+    if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
+    setSelectedChat(data);
+    setLoadingChat(false);
+    onClose();
+  } catch (error) {
+    toast({
+      title: "Error fetching the chat",
+      description: error.message,
+      status: "error",
+      duration: 5000,
+      isClosable: true,
+      position: "bottom-left",
+    });
+  }
+};
   return (
     <>
       <Box    display="flex"
@@ -133,6 +166,7 @@ const accessChat = (userId)=>{
            return   <UserListItem key={user._id} user={user} handleFunction={()=>accessChat(user._id)}/>
             })
           )}
+          {loadingChat && <Spinner ml="auto" display={"flex"}/>}
         </DrawerBody>
         </DrawerContent>
        
