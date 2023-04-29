@@ -31,20 +31,59 @@ const Login = () => {
       return;
     }
  
+    // try {
+    //   const config = {
+    //     headers: {
+    //       "Content-type": "application/json",
+    //     },
+    //   };
+
+    //   const { data } = await axios.post(
+    //     "/api/user/login",
+    //     { email, password },
+    //     config
+    //   );
+
+    //   // console.log(JSON.stringify(data));
+    //   toast({
+    //     title: "Login Successful",
+    //     status: "success",
+    //     duration: 5000,
+    //     isClosable: true,
+    //     position: "bottom",
+    //   });
+    //   localStorage.setItem("userInfo", JSON.stringify(data));
+    //   setLoading(false);
+    //   history("/chats");
+    // } catch (error) {
+    //   toast({
+    //     title: "Error Occured!",
+    //     description: error.response.data.message,
+    //     status: "error",
+    //     duration: 5000,
+    //     isClosable: true,
+    //     position: "bottom",
+    //   });
+    //   setLoading(false);
+    // }
+
     try {
       const config = {
         headers: {
           "Content-type": "application/json",
         },
       };
-
+    
       const { data } = await axios.post(
         "/api/user/login",
         { email, password },
         config
       );
-
-      // console.log(JSON.stringify(data));
+    
+      if (!data || !data._id) {
+        throw new Error("Invalid data returned from server");
+      }
+    
       toast({
         title: "Login Successful",
         status: "success",
@@ -66,6 +105,7 @@ const Login = () => {
       });
       setLoading(false);
     }
+    
   };
 
   return (

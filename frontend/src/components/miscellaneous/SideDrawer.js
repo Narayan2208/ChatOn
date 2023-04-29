@@ -19,8 +19,6 @@ function SideDrawer() {
   const {
     setSelectedChat,
     user,
-    notification,
-    setNotification,
     chats,
     setChats,
   } = ChatState();
