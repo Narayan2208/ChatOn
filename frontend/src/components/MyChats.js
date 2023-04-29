@@ -7,7 +7,7 @@ import ChatLoading from './ChatLoading';
 import { getSender } from '../config/ChatLogics';
 import axios from "axios";
 import GroupChatModal from './miscellaneous/GroupChatModal';
-function MyChats() {
+function MyChats({fetchAgain}) {
   const [loggedUser, setLoggedUser] = useState();
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
   const toast = useToast();
@@ -41,7 +41,7 @@ function MyChats() {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
     // eslint-disable-next-line
-  }, []);
+  }, [fetchAgain]);
   return (
     <Box
     display={{ base: selectedChat ? "none" : "flex", md: "flex" }}
