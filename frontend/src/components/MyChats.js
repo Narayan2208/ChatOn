@@ -6,6 +6,7 @@ import {ChatState} from '../Context/ChatProvider'
 import ChatLoading from './ChatLoading';
 import { getSender } from '../config/ChatLogics';
 import axios from "axios";
+import GroupChatModal from './miscellaneous/GroupChatModal';
 function MyChats() {
   const [loggedUser, setLoggedUser] = useState();
   const { selectedChat, setSelectedChat, user, chats, setChats } = ChatState();
@@ -60,6 +61,9 @@ function MyChats() {
         w="100%"
         justifyContent="space-between"
         alignItems="center">My chats
+        <GroupChatModal>
+
+        
          <Button
             d="flex"
             fontSize={{ base: "17px", md: "10px", lg: "17px" }}
@@ -67,6 +71,7 @@ function MyChats() {
           >
             New Group Chat
           </Button>
+          </GroupChatModal>
         </Box>
         <Box display="flex"
         flexDir="column"
