@@ -26,3 +26,4 @@ router.route("/:chatId").get(protect, allMessages);
 router.route("/").post(protect, sendMessage);
 
 module.exports = router;
+
