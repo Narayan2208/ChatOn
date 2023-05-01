@@ -7,6 +7,8 @@ const userRoutes = require("./routes/userRoutes");
 const chatRoutes = require("./routes/chatRoutes");
 const messageRoutes = require("./routes/messageRoutes");
 
+
+
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 const { Socket } = require("socket.io");
 dotenv.config();
