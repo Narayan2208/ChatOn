@@ -68,6 +68,10 @@ function MyChats({fetchAgain}) {
             d="flex"
             fontSize={{ base: "17px", md: "10px", lg: "17px" }}
             rightIcon={<AddIcon />}
+            ml={"10px"}
+            bg={"#4832D5"}
+            fontWeight={"bolder"}
+            colorScheme='white'
           >
             New Group Chat
           </Button>
@@ -87,10 +91,12 @@ function MyChats({fetchAgain}) {
             {chats.map((chat)=>(
               <Box onClick={() => setSelectedChat(chat)}
                 cursor="pointer"
-                bg={selectedChat === chat ? "#38B2AC" : "#E8E8E8"}
+                bg={selectedChat === chat ? "#4832D5" : "#CCF281"}
                 color={selectedChat === chat ? "white" : "black"}
                 px={3}
                 py={2}
+                fontSize={"18px"}
+                fontFamily='monospace'
                 borderRadius="lg"
                 key={chat._id}>
             <Text>

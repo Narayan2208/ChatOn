@@ -168,6 +168,7 @@ const accessChat = async (userId) => {
               />
               <Button 
               onClick={handleSearch}
+              bg={"#CCF281"}
               >
             Go
               </Button>

@@ -33,6 +33,8 @@ function Homepage() {
         m="40px 0 15px 0"
         borderRadius="lg"
         borderWidth="1px"
+        background= "linear-gradient(to right, #74ebd5, #ACB6E5)"
+        
       >
         <Text fontSize="4xl" fontWeight={"bolder"} fontFamily="Work sans">
           Chat-On

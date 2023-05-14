@@ -9,9 +9,9 @@ const UserListItem = ({user, handleFunction }) => {
     <Box
       onClick={handleFunction}
       cursor="pointer"
-      bg="#E8E8E8"
+      bg="#CCF281"
       _hover={{
-        background: "#38B2AC",
+        background: "#4832D5",
         color: "white",
       }}
       w="100%"
@@ -22,6 +22,8 @@ const UserListItem = ({user, handleFunction }) => {
       py={2}
       mb={2}
       borderRadius="lg"
+      fontWeight={"bolder"}
+      fontFamily={"arial"}
     >
       <Avatar
         mr={2}

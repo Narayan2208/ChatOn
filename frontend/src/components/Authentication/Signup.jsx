@@ -121,7 +121,7 @@ const Signup = () => {
   };
 
   return (
-    <VStack spacing="5px">
+    <VStack spacing="5px" >
       <FormControl id="first-name" isRequired>
         <FormLabel>Name</FormLabel>
         <Input
