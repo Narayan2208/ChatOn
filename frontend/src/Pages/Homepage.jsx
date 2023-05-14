@@ -34,12 +34,12 @@ function Homepage() {
         borderRadius="lg"
         borderWidth="1px"
       >
-        <Text fontSize="4xl" fontFamily="Work sans">
+        <Text fontSize="4xl" fontWeight={"bolder"} fontFamily="Work sans">
           Chat-On
         </Text>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
-        <Tabs isFitted variant="soft-rounded">
+        <Tabs isFitted variant="soft-rounded" colorScheme='green'>
           <TabList mb="1em">
             <Tab>Login</Tab>
             <Tab>Sign Up</Tab>

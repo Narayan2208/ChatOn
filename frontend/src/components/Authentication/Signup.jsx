@@ -177,7 +177,7 @@ const Signup = () => {
         />
       </FormControl>
       <Button
-        colorScheme="blue"
+        bg="#66bb6a"
         width="100%"
         style={{ marginTop: 15 }}
         onClick={submitHandler}

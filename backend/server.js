@@ -32,7 +32,7 @@ app.use(errorHandler);
 // Deployment
 
 
-const PORT = process.env.PORT || 5000;
+const PORT = 5000 || 5000;
 connectDB();
 
 const server = app.listen(PORT, console.log(`Server Started on PORT ${PORT}`));
@@ -77,3 +77,4 @@ io.on("connection", (socket) => {
         socket.leave(userData._id);
       });
 })
+
